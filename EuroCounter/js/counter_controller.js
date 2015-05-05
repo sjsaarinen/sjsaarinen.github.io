@@ -1,5 +1,20 @@
 CounterApp.controller('CounterController', function($scope){
     
+    $scope.hundredEuro = '';
+    $scope.fiftyEuro = '';
+    $scope.twentyEuro = '';
+    $scope.tenEuro = '';
+    $scope.fiveEuro = '';
+    $scope.twoEuro = '';
+    $scope.oneEuro = '';
+    $scope.fiftyCent = '';
+    $scope.twentyCent = '';
+    $scope.tenCent = '';
+    $scope.fiveCent = '';
+    
+    $scope.counterView = true;
+    $scope.listView = false;
+    
     var hundredEcentSum = 0;
     var fiftyEcentSum = 0;
     var twentyEcentSum = 0;
@@ -24,6 +39,16 @@ CounterApp.controller('CounterController', function($scope){
                            twentyCcentSum +
                            tenCcentSum +
                            fiveCcentSum) / 100) + '€';
+    };
+    
+    $scope.showCounter = function(){
+        $scope.counterView = true;
+        $scope.listView = false;
+    };
+    
+    $scope.showList = function(){
+        $scope.counterView = false;
+        $scope.listView = true;
     };
     
     $scope.$watch('hundredEuro', function(newValue, oldValue){
