@@ -8,89 +8,89 @@
     </head>
     <body ng-app="CounterApp">
         <div class="wrapper">
-        <div class="content-main col-xs-12 col-sm-12">
-        <div ng-controller="CounterController">
-            
-            <table class="table">
-                <tr>
-                    <th class="col-xs-4 col-sm-2"></th>
-                    <th class="col-xs-4 col-sm-2"></th>
-                    <th class="col-xs-4 col-sm-8"></th>
-                </tr>
-                <tr>
-                    <td>100€</td>
-                    <td><input name="hundredEuro" type="number" class="form-control" ng-model="hundredEuro"></td>
-                    <td></td>
-                </tr>
+            <div class="content-main col-xs-12 col-sm-12">
+                <div ng-controller="CounterController">
 
-                <tr>
-                    <td>50€</td>
-                    <td><input name="fiftyEuro" type="number" class="form-control" ng-model="fiftyEuro"></td>
-                    <td></td>
-                </tr>
-                
-                <tr>
-                    <td>20€</td>
-                    <td><input name="twentEuro" type="number" class="form-control" ng-model="twentyEuro"></td>
-                    <td></td>
-                </tr>
-                
-                <tr>
-                    <td>10€</td>
-                    <td><input name="tenEuro" type="number" class="form-control" ng-model="tenEuro"></td>
-                    <td></td>
-                </tr>
-                
-                <tr>
-                    <td>5€</td>
-                    <td><input name="fiveEuro" type="number" class="form-control" ng-model="fiveEuro"></td>
-                    <td></td>
-                </tr>
-                
-                <tr>
-                    <td>2€</td>
-                    <td><input name="twoEuro" type="number" class="form-control" ng-model="twoEuro"></td>
-                    <td></td>
-                </tr>
-                
-                <tr>
-                    <td>1€</td>
-                    <td><input name="oneEuro" type="number" class="form-control" ng-model="oneEuro"></td>
-                    <td></td>
-                </tr>
-                
-                <tr>
-                    <td>0.50€</td>
-                    <td><input name="fiftyCent" type="number" class="form-control" ng-model="fiftyCent"></td>
-                    <td></td>
-                </tr>
-                
-                <tr>
-                    <td>0.20€</td>
-                    <td><input name="twentyCent" type="number" class="form-control" ng-model="twentyCent"></td>
-                    <td></td>
-                </tr>
-                
-                <tr>
-                    <td>0.10€</td>
-                    <td><input name="tenCent" type="number" class="form-control" ng-model="tenCent"></td>
-                    <td></td>
-                </tr>
-                
-                <tr>
-                    <td>0.05€</td>
-                    <td><input name="fiveCent" type="number" class="form-control" ng-model="fiveCent"></td>
-                    <td></td>
-                </tr>
-                
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td>{{total}}</td>
-                </tr>
-                
-            </table>
-            </div>
+                    <table class="table">
+                        <tr>
+                            <th class="col-xs-4 col-sm-2"></th>
+                            <th class="col-xs-4 col-sm-2"></th>
+                            <th class="col-xs-4 col-sm-8"></th>
+                        </tr>
+                        <tr>
+                            <td>100€</td>
+                            <td><input name="hundredEuro" type="number" class="form-control" ng-model="hundredEuro"></td>
+                            <td>{{hundredEuroSum}}</td>
+                        </tr>
+
+                        <tr>
+                            <td>50€</td>
+                            <td><input name="fiftyEuro" type="number" class="form-control" ng-model="fiftyEuro"></td>
+                            <td>{{fiftyEuroSum}}</td>
+                        </tr>
+
+                        <tr>
+                            <td>20€</td>
+                            <td><input name="twentyEuro" type="number" class="form-control" ng-model="twentyEuro"></td>
+                            <td>{{twentyEuroSum}}</td>
+                        </tr>
+
+                        <tr>
+                            <td>10€</td>
+                            <td><input name="tenEuro" type="number" class="form-control" ng-model="tenEuro"></td>
+                            <td>{{tenEuroSum}}</td>
+                        </tr>
+
+                        <tr>
+                            <td>5€</td>
+                            <td><input name="fiveEuro" type="numbers" class="form-control" ng-model="fiveEuro"></td>
+                            <td>{{fiveEuroSum}}</td>
+                        </tr>
+
+                        <tr>
+                            <td>2€</td>
+                            <td><input name="twoEuro" type="number" class="form-control" ng-model="twoEuro"></td>
+                            <td>{{twoEuroSum}}</td>
+                        </tr>
+
+                        <tr>
+                            <td>1€</td>
+                            <td><input name="oneEuro" type="number" class="form-control" ng-model="oneEuro"></td>
+                            <td>{{oneEuroSum}}</td>
+                        </tr>
+
+                        <tr>
+                            <td>0.50€</td>
+                            <td><input name="fiftyCent" type="number" class="form-control" ng-model="fiftyCent"></td>
+                            <td>{{fiftyCentSum}}</td>
+                        </tr>
+
+                        <tr>
+                            <td>0.20€</td>
+                            <td><input name="twentyCent" type="number" class="form-control" ng-model="twentyCent"></td>
+                            <td>{{twentyCentSum}}</td>
+                        </tr>
+
+                        <tr>
+                            <td>0.10€</td>
+                            <td><input name="tenCent" type="number" class="form-control" ng-model="tenCent"></td>
+                            <td>{{tenCentSum}}</td>
+                        </tr>
+
+                        <tr>
+                            <td>0.05€</td>
+                            <td><input name="fiveCent" type="number" class="form-control" ng-model="fiveCent"></td>
+                            <td>{{fiveCentSum}}</td>
+                        </tr>
+
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>{{totalSum}}</td>
+                        </tr>
+
+                    </table>
+                </div>
             </div>
         </div>
         <script src="js/libs/angular.min.js"></script>
