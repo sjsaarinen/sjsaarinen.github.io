@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>EuroCounter</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    </head>
+    <body ng-app="CounterApp">
+        <div class="wrapper">
+        <div class="content-main col-sm-12">
+        <div ng-controller="CounterController">
+            
+            <table class="table">
+                <tr>
+                    <th class="col-sm-4"></th>
+                    <th class="col-sm-4"></th>
+                    <th class="col-sm-4"></th>
+                </tr>
+                <tr>
+                    <td>100€</td>
+                    <td><input name="hundredEuro" type="number" class="form-control" ng-model="hundredEuro"></td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>50€</td>
+                    <td><input name="fiftyEuro" type="number" class="form-control" ng-model="fiftyEuro"></td>
+                    <td></td>
+                </tr>
+                
+                <tr>
+                    <td>20€</td>
+                    <td><input name="twentEuro" type="number" class="form-control" ng-model="twentyEuro"></td>
+                    <td></td>
+                </tr>
+                
+                <tr>
+                    <td>10€</td>
+                    <td><input name="tenEuro" type="number" class="form-control" ng-model="tenEuro"></td>
+                    <td></td>
+                </tr>
+                
+                <tr>
+                    <td>5€</td>
+                    <td><input name="fiveEuro" type="number" class="form-control" ng-model="fiveEuro"></td>
+                    <td></td>
+                </tr>
+                
+                <tr>
+                    <td>2€</td>
+                    <td><input name="twoEuro" type="number" class="form-control" ng-model="twoEuro"></td>
+                    <td></td>
+                </tr>
+                
+                <tr>
+                    <td>1€</td>
+                    <td><input name="oneEuro" type="number" class="form-control" ng-model="oneEuro"></td>
+                    <td></td>
+                </tr>
+                
+                <tr>
+                    <td>0.50€</td>
+                    <td><input name="fiftyCent" type="number" class="form-control" ng-model="fiftyCent"></td>
+                    <td></td>
+                </tr>
+                
+                <tr>
+                    <td>0.20€</td>
+                    <td><input name="twentyCent" type="number" class="form-control" ng-model="twentyCent"></td>
+                    <td></td>
+                </tr>
+                
+                <tr>
+                    <td>0.10€</td>
+                    <td><input name="tenCent" type="number" class="form-control" ng-model="tenCent"></td>
+                    <td></td>
+                </tr>
+                
+                <tr>
+                    <td>0.05€</td>
+                    <td><input name="fiveCent" type="number" class="form-control" ng-model="fiveCent"></td>
+                    <td></td>
+                </tr>
+                
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>{{total}}</td>
+                </tr>
+                
+            </table>
+            </div>
+            </div>
+        </div>
+        <script src="js/libs/angular.min.js"></script>
+        <script src="js/libs/jquery-1.11.2.min.js"></script>
+        <script src="js/libs/bootstrap.min.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/counter_controller.js"></script>
+    </body>
+</html>
