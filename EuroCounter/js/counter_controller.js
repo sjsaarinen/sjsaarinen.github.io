@@ -16,6 +16,7 @@ CounterApp.controller('CounterController', function($scope){
     $scope.counterView = true;
     $scope.listView = false;
     
+    //variables to store amounts as cents to avoid float rounding errors
     var twohundredEcentSum = 0;
     var hundredEcentSum = 0;
     var fiftyEcentSum = 0;
@@ -56,7 +57,7 @@ CounterApp.controller('CounterController', function($scope){
     
     $scope.$watch('twohundredEuro', function(newValue, oldValue){
         if (newValue){
-            twohundredEcentSum = parseInt(newValue) * 10000;
+            twohundredEcentSum = parseInt(newValue) * 20000;
         } else {
             twohundredEcentSum = 0;
         }
