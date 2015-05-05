@@ -1,5 +1,7 @@
 CounterApp.controller('CounterController', function($scope){
     
+    $scope.show = true;
+    
     $scope.twohundredEuro = '';
     $scope.hundredEuro = '';
     $scope.fiftyEuro = '';
