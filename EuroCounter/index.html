@@ -5,22 +5,25 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
     </head>
     <body ng-app="CounterApp">
+        <div ng-controller="CounterController">
+        <nav class="navbar navbar-default navbar-fixed-top">
+                    <div class="container">
+                        <h3 class="navbar-text navbar-right">{{totalSum}}</h3>
+                    </div>
+         </nav>
         <div class="wrapper">
             <div class="content-main col-xs-12 col-sm-12">
-                <div ng-controller="CounterController">
+               
+                
 
                     <table class="table">
                         <tr>
-                            <th class="col-xs-4 col-sm-2"></th>
-                            <th class="col-xs-4 col-sm-2"></th>
-                            <th class="col-xs-4 col-sm-8"></th>
-                        </tr>
-                        <tr>
-                            <td>100€</td>
-                            <td><input name="hundredEuro" type="number" class="form-control" ng-model="hundredEuro"></td>
-                            <td>{{hundredEuroSum}}</td>
+                            <td class="col-xs-4 col-sm-2">100€</td>
+                            <td class="col-xs-4 col-sm-2"><input name="hundredEuro" type="number" pattern="[0-9]*" value="123" class="form-control" ng-model="hundredEuro"></td>
+                            <td class="col-xs-4 col-sm-8">{{hundredEuroSum}}</td>
                         </tr>
 
                         <tr>
@@ -86,7 +89,7 @@
                         <tr>
                             <td></td>
                             <td></td>
-                            <td>{{totalSum}}</td>
+                            <td></td>
                         </tr>
 
                     </table>
