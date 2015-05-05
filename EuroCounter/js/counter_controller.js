@@ -2,6 +2,7 @@ CounterApp.controller('CounterController', function($scope){
     
     $scope.show = true;
     
+    $scope.fivehundredEuro = '';
     $scope.twohundredEuro = '';
     $scope.hundredEuro = '';
     $scope.fiftyEuro = '';
@@ -19,6 +20,7 @@ CounterApp.controller('CounterController', function($scope){
     $scope.listView = false;
     
     //variables to store amounts as cents to avoid float rounding errors
+    var fivehundredEcentSum = 0;
     var twohundredEcentSum = 0;
     var hundredEcentSum = 0;
     var fiftyEcentSum = 0;
@@ -33,7 +35,8 @@ CounterApp.controller('CounterController', function($scope){
     var fiveCcentSum = 0;
     
     var sumAll = function(){
-        $scope.totalSum = ((twohundredEcentSum +
+        $scope.totalSum = ((fivehundredEcentSum +
+                            twohundredEcentSum +
                             hundredEcentSum +
                             fiftyEcentSum +
                             twentyEcentSum +
@@ -56,6 +59,16 @@ CounterApp.controller('CounterController', function($scope){
         $scope.counterView = false;
         $scope.listView = true;
     };
+    
+    $scope.$watch('fivehundredEuro', function(newValue, oldValue){
+        if (newValue){
+            fivehundredEcentSum = parseInt(newValue) * 50000;
+        } else {
+            fivehundredEcentSum = 0;
+        }
+        $scope.fivehundredEuroSum = (fivehundredEcentSum / 100) + '€';
+        sumAll();
+    });
     
     $scope.$watch('twohundredEuro', function(newValue, oldValue){
         if (newValue){
@@ -168,6 +181,7 @@ CounterApp.controller('CounterController', function($scope){
     });
     
     $scope.$watch('fiveCent', function(newValue, oldValue){
+        //countSums(fiveCcentSum, $scope.fiveCentSum, newValue);
         if (newValue){
             fiveCcentSum = parseInt(newValue) * 5;
         } else {
@@ -176,5 +190,16 @@ CounterApp.controller('CounterController', function($scope){
         $scope.fiveCentSum = (fiveCcentSum / 100) + '€';
         sumAll();
     });
+    
+    /*
+    var countSums = function(centSum, euroSum, newValue){
+        if (newValue){
+            centSum = parseInt(newValue) * 5;
+        } else {
+            centSum = 0;
+        }
+        euroSum = (centSum / 100) + '€';
+        sumAll();
+    };*/
     
 });

@@ -34,9 +34,15 @@
                 <div class="content-main col-xs-12 col-sm-12">
                     <table class="table table-condensed table-striped table-vcenter" ng-show="counterView">
                         <tr>
-                            <td class="col-xs-4 col-sm-2">200€</td>
-                            <td class="col-xs-4 col-sm-2"><input name="twohundredEuro" type="number" pattern="[0-9]*" value="123" class="form-control" ng-model="twohundredEuro"></td>
-                            <td class="col-xs-4 col-sm-8">{{twohundredEuroSum}}</td>
+                            <td class="col-xs-4 col-sm-2">500€</td>
+                            <td class="col-xs-4 col-sm-2"><input name="fivehundredEuro" type="number" pattern="[0-9]*" value="123" class="form-control" ng-model="fivehundredEuro"></td>
+                            <td class="col-xs-4 col-sm-8">{{fivehundredEuroSum}}</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>200€</td>
+                            <td><input name="twohundredEuro" type="number" pattern="[0-9]*" value="123" class="form-control" ng-model="twohundredEuro"></td>
+                            <td>{{twohundredEuroSum}}</td>
                         </tr>
 
                         <tr>
@@ -114,6 +120,11 @@
                             <td class="col-xs-4 col-sm-8"> </td>
                         </tr>
                         
+                        <tr>
+                            <td>500€</td>
+                            <td>{{fivehundredEuro}}</td>
+                            <td>{{fivehundredEuroSum}}</td>
+                        </tr>
                         
                         <tr>
                             <td>200€</td>
