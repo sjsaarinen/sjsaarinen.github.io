@@ -1,5 +1,6 @@
 CounterApp.controller('CounterController', function($scope){
     
+    $scope.twohundredEuro = '';
     $scope.hundredEuro = '';
     $scope.fiftyEuro = '';
     $scope.twentyEuro = '';
@@ -15,6 +16,7 @@ CounterApp.controller('CounterController', function($scope){
     $scope.counterView = true;
     $scope.listView = false;
     
+    var twohundredEcentSum = 0;
     var hundredEcentSum = 0;
     var fiftyEcentSum = 0;
     var twentyEcentSum = 0;
@@ -28,17 +30,18 @@ CounterApp.controller('CounterController', function($scope){
     var fiveCcentSum = 0;
     
     var sumAll = function(){
-        $scope.totalSum = ((hundredEcentSum +
-                           fiftyEcentSum +
-                           twentyEcentSum +
-                           tenEcentSum +
-                           fiveEcentSum +
-                           twoEcentSum +
-                           oneEcentSum +
-                           fiftyCcentSum +
-                           twentyCcentSum +
-                           tenCcentSum +
-                           fiveCcentSum) / 100) + '€';
+        $scope.totalSum = ((twohundredEcentSum +
+                            hundredEcentSum +
+                            fiftyEcentSum +
+                            twentyEcentSum +
+                            tenEcentSum +
+                            fiveEcentSum +
+                            twoEcentSum +
+                            oneEcentSum +
+                            fiftyCcentSum +
+                            twentyCcentSum +
+                            tenCcentSum +
+                            fiveCcentSum) / 100) + '€';
     };
     
     $scope.showCounter = function(){
@@ -50,6 +53,16 @@ CounterApp.controller('CounterController', function($scope){
         $scope.counterView = false;
         $scope.listView = true;
     };
+    
+    $scope.$watch('twohundredEuro', function(newValue, oldValue){
+        if (newValue){
+            twohundredEcentSum = parseInt(newValue) * 10000;
+        } else {
+            twohundredEcentSum = 0;
+        }
+        $scope.twohundredEuroSum = (twohundredEcentSum / 100) + '€';
+        sumAll();
+    });
     
     $scope.$watch('hundredEuro', function(newValue, oldValue){
         if (newValue){
