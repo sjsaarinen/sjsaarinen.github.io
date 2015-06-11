@@ -152,7 +152,7 @@ CounterApp.controller('CounterController', function($scope){
         if (newValue){
             twoERollCentSum = parseInt(newValue) * 5000;
         } else {
-           twoEcentSum = 0;
+           twoEcRollCentSum = 0;
         }
         $scope.twoEuroRollSum = (twoERollCentSum / 100) + '€';
         $scope.twoEuroSum = ((twoERollCentSum + twoEcentSum) / 100) + '€';
@@ -174,7 +174,7 @@ CounterApp.controller('CounterController', function($scope){
         if (newValue){
             oneERollCentSum = parseInt(newValue) * 2500;
         } else {
-           oneEcentSum = 0;
+           oneERollCentSum = 0;
         }
         $scope.oneEuroRollSum = (oneERollCentSum / 100) + '€';
         $scope.oneEuroSum = ((oneERollCentSum + oneEcentSum) / 100) + '€';
@@ -196,7 +196,7 @@ CounterApp.controller('CounterController', function($scope){
         if (newValue){
             fiftyCRollCentSum = parseInt(newValue) * 2000;
         } else {
-           fiftyCcentSum = 0;
+           fiftyCRollCentSum = 0;
         }
         $scope.fiftyCentRollSum = (fiftyCRollCentSum / 100) + '€';
         $scope.fiftyCentSum = ((fiftyCRollCentSum + fiftyCcentSum) / 100) + '€';
@@ -218,7 +218,7 @@ CounterApp.controller('CounterController', function($scope){
         if (newValue){
             twentyCRollCentSum = parseInt(newValue) * 800;
         } else {
-           twentyCcentSum = 0;
+           twentyCRollCentSum = 0;
         }
         $scope.twentyCentRollSum = (twentyCRollCentSum / 100) + '€';
         $scope.twentyCentSum = ((twentyCRollCentSum + twentyCcentSum) / 100) + '€';
@@ -240,7 +240,7 @@ CounterApp.controller('CounterController', function($scope){
         if (newValue){
             tenCRollCentSum = parseInt(newValue) * 400;
         } else {
-           tenCcentSum = 0;
+           tenCRollCentSum = 0;
         }
         $scope.tenCentRollSum = (tenCRollCentSum / 100) + '€';
         $scope.tenCentSum = ((tenCRollCentSum + tenCcentSum) / 100) + '€';
