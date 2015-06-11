@@ -25,7 +25,7 @@
                     <div class="collapse navbar-collapse navbar-right" id="navi">
                         <ul class="nav navbar-nav">
                             <li><a href="#" ng-click="showCounter()">Counter</a></li>
-                            <li><a href="#" ng-click="showList()">List</a></li>
+                            <li><a href="#" ng-click="showList()">Summary</a></li>
                         </ul>
                     </div>
                 </div>
@@ -33,82 +33,107 @@
             <div class="wrapper">
                 <div class="content-main col-xs-12 col-sm-12">
                     <table class="table table-condensed table-striped table-vcenter" ng-show="counterView" ng-swipe-left="showList()" ng-swipe-right="showList()">
+                        <tr>
+                            <td class="col-xs-3 col-sm-2"></td>
+                            <td class="col-xs-3 col-sm-1">Coins</td>
+                            <td class="col-xs-3 col-sm-1">Rolls</td>
+                            <td class="col-xs-3 col-sm-2"></td>
+                        </tr>
                         
                         <tr>
-                            <td class="col-xs-4 col-sm-2">0.05€</td>
-                            <td class="col-xs-4 col-sm-2"><input name="fiveCent" type="number" class="form-control" ng-model="fiveCent"></td>
-                            <td class="col-xs-4 col-sm-2">{{fiveCentSum}}</td>
+                            <td>0.05€</td>
+                            <td><input name="fiveCent" type="number" class="form-control" ng-model="fiveCent"></td>
+                            <td><input name="fiveCentRoll" type="number" class="form-control" ng-model="fiveCentRoll"></td>
+                            <td>{{fiveCentSum}}</td>
                         </tr>
                         
                         <tr>
                             <td>0.10€</td>
                             <td><input name="tenCent" type="number" class="form-control" ng-model="tenCent"></td>
+                            <td><input name="tenCentRoll" type="number" class="form-control" ng-model="tenCentRoll"></td>
                             <td>{{tenCentSum}}</td>
                         </tr>
 
                         <tr>
                             <td>0.20€</td>
                             <td><input name="twentyCent" type="number" class="form-control" ng-model="twentyCent"></td>
+                            <td><input name="twentyCentRoll" type="number" class="form-control" ng-model="twentyCentRoll"></td>
                             <td>{{twentyCentSum}}</td>
                         </tr>
 
                         <tr>
                             <td>0.50€</td>
                             <td><input name="fiftyCent" type="number" class="form-control" ng-model="fiftyCent"></td>
+                            <td><input name="fiftyCentRoll" type="number" class="form-control" ng-model="fiftyCentRoll"></td>
                             <td>{{fiftyCentSum}}</td>
                         </tr>
                         
                         <tr>
                             <td>1€</td>
                             <td><input name="oneEuro" type="number" class="form-control" ng-model="oneEuro"></td>
+                            <td><input name="oneEuroRoll" type="number" class="form-control" ng-model="oneEuroRoll"></td>
                             <td>{{oneEuroSum}}</td>
                         </tr>
                         
                         <tr>
                             <td>2€</td>
                             <td><input name="twoEuro" type="number" class="form-control" ng-model="twoEuro"></td>
+                            <td><input name="twoEuroRoll" type="number" class="form-control" ng-model="twoEuroRoll"></td>
                             <td>{{twoEuroSum}}</td>
                         </tr>
 
                         <tr>
+                            <td></td>
+                            <td>Notes</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
                             <td>5€</td>
                             <td><input name="fiveEuro" type="number" class="form-control" ng-model="fiveEuro"></td>
+                            <td></td>
                             <td>{{fiveEuroSum}}</td>
                         </tr>
                         
                         <tr>
                             <td>10€</td>
                             <td><input name="tenEuro" type="number" class="form-control" ng-model="tenEuro"></td>
+                            <td></td>
                             <td>{{tenEuroSum}}</td>
                         </tr>
                         
                         <tr>
                             <td>20€</td>
                             <td><input name="twentyEuro" type="number" class="form-control" ng-model="twentyEuro"></td>
+                            <td></td>
                             <td>{{twentyEuroSum}}</td>
                         </tr>
                         
                         <tr>
                             <td>50€</td>
                             <td><input name="fiftyEuro" type="number" class="form-control" ng-model="fiftyEuro"></td>
+                            <td></td>
                             <td>{{fiftyEuroSum}}</td>
                         </tr>
                         
                         <tr>
                             <td>100€</td>
                             <td><input name="hundredEuro" type="number" class="form-control" ng-model="hundredEuro"></td>
+                            <td></td>
                             <td>{{hundredEuroSum}}</td>
                         </tr>
                         
                         <tr>
                             <td>200€</td>
                             <td><input name="twohundredEuro" type="number" pattern="[0-9]*" value="123" class="form-control" ng-model="twohundredEuro"></td>
+                            <td></td>
                             <td>{{twohundredEuroSum}}</td>
                         </tr>
                         
                         <tr>
                             <td>500€</td>
                             <td><input name="fivehundredEuro" type="number" pattern="[0-9]*" value="123" class="form-control" ng-model="fivehundredEuro"></td>
+                            <td></td>
                             <td>{{fivehundredEuroSum}}</td>
                         </tr>
                         
@@ -116,86 +141,113 @@
 
                     <table class="table table-condensed table-striped table-vcenter" ng-show="listView" ng-swipe-left="showCounter()" ng-swipe-right="showCounter()">
                         <tr>
-                            <td class="col-xs-4 col-sm-2"> </td>
-                            <td class="col-xs-4 col-sm-2"> </td>
-                            <td class="col-xs-4 col-sm-8"> </td>
+                            <td class="col-xs-3 col-sm-2"> </td>
+                            <td class="col-xs-3 col-sm-2"> </td>
+                            <td class="col-xs-3 col-sm-2"> </td>
+                            <td class="col-xs-3 col-sm-6"> </td>
+
                         </tr>                                            
 
                         <tr>
+                            <td></td>
+                            <td>Coins</td>
+                            <td>Rolls</td>
+                            <td>Total</td>
+                        </tr>
+                        <tr>
                             <td>0.05€</td>
-                            <td>{{fiveCent}}</td>
+                            <td>{{fiveCentCoinSum}}</td>
+                            <td>{{fiveCentRollSum}}</td>
                             <td>{{fiveCentSum}}</td>
                         </tr>
                         
                         <tr>
                             <td>0.10€</td>
-                            <td>{{tenCent}}</td>
+                            <td>{{tenCentCoinSum}}</td>
+                            <td>{{tenCentRollSum}}
                             <td>{{tenCentSum}}</td>
                         </tr>
                         
                         <tr>
                             <td>0.20€</td>
-                            <td>{{twentyCent}}</td>
+                            <td>{{twentyCentCoinSum}}</td>
+                            <td>{{twentyCentRollSum}}</td>
                             <td>{{twentyCentSum}}</td>
                         </tr>
                         
                         <tr>
                             <td>0.50€</td>
-                            <td>{{fiftyCent}}</td>
+                            <td>{{fiftyCentCoinSum}}</td>
+                            <td>{{fiftyCentRollSum}}</td>
                             <td>{{fiftyCentSum}}</td>
                         </tr>
 
                         <tr>
                             <td>1€</td>
-                            <td>{{oneEuro}}</td>
+                            <td>{{oneEuroCoinSum}}</td>
+                            <td>{{oneEuroRollSum}}</td>
                             <td>{{oneEuroSum}}</td>
                         </tr>
                         
                         <tr>
                             <td>2€</td>
-                            <td>{{twoEuro}}</td>
+                            <td>{{twoEuroCoinSum}}</td>
+                            <td>{{twoEuroRollSum}}</td>
                             <td>{{twoEuroSum}}</td>
                         </tr>
                         
                         <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
                             <td>5€</td>
-                            <td>{{fiveEuro}}</td>
+                            <td></td>
+                            <td></td>
                             <td>{{fiveEuroSum}}</td>
                         </tr>
                         
                         <tr>
                             <td>10€</td>
-                            <td>{{tenEuro}}</td>
+                            <td></td>
+                            <td></td>
                             <td>{{tenEuroSum}}</td>
                         </tr>
                         
                         <tr>
                             <td>20€</td>
-                            <td>{{twentyEuro}}</td>
+                            <td></td>
+                            <td></td>
                             <td>{{twentyEuroSum}}</td>
                         </tr>
                         
                         <tr>
                             <td>50€</td>
-                            <td>{{fiftyEuro}}</td>
+                            <td></td>
+                            <td></td>
                             <td>{{fiftyEuroSum}}</td>
                         </tr>
                         
                         <tr>
                             <td>100€</td>
-                            <td>{{hundredEuro}}</td>
+                            <td></td>
+                            <td></td>
                             <td>{{hundredEuroSum}}</td>
                         </tr>
                         
                         <tr>
                             <td>200€</td>
-                            <td>{{twohundredEuro}}</td>
+                            <td></td>
+                            <td></td>
                             <td>{{twohundredEuroSum}}</td>
                         </tr>
                         
                         <tr>
                             <td>500€</td>
-                            <td>{{fivehundredEuro}}</td>
+                            <td></td>
+                            <td></td>
                             <td>{{fivehundredEuroSum}}</td>
                         </tr>
 

@@ -15,6 +15,12 @@ CounterApp.controller('CounterController', function($scope){
     $scope.twentyCent = '';
     $scope.tenCent = '';
     $scope.fiveCent = '';
+    $scope.twoEuroRoll = '';
+    $scope.oneEuroRoll = '';
+    $scope.fiftyCentRoll = '';
+    $scope.twentyCentRoll = '';
+    $scope.tenCentRoll = '';
+    $scope.fiveCentRoll = '';
     
     $scope.counterView = true;
     $scope.listView = false;
@@ -27,12 +33,18 @@ CounterApp.controller('CounterController', function($scope){
     var twentyEcentSum = 0;
     var tenEcentSum = 0;
     var fiveEcentSum = 0;
+    var twoERollCentSum = 0;
     var twoEcentSum = 0;
+    var oneERollCentSum = 0;
     var oneEcentSum = 0;
+    var fiftyCRollCentSum = 0;
     var fiftyCcentSum = 0;
+    var twentyCRollCentSum = 0;
     var twentyCcentSum = 0;
     var tenCcentSum = 0;
+    var tenCRollCentSum = 0;
     var fiveCcentSum = 0;
+    var fiveCRollCentSum = 0;
     
     var sumAll = function(){
         $scope.totalSum = ((fivehundredEcentSum +
@@ -42,11 +54,17 @@ CounterApp.controller('CounterController', function($scope){
                             twentyEcentSum +
                             tenEcentSum +
                             fiveEcentSum +
+                            twoERollCentSum +
                             twoEcentSum +
+                            oneERollCentSum +
                             oneEcentSum +
+                            fiftyCRollCentSum +
                             fiftyCcentSum +
+                            twentyCRollCentSum+
                             twentyCcentSum +
+                            tenCRollCentSum +
                             tenCcentSum +
+                            fiveCRollCentSum +
                             fiveCcentSum) / 100) + '€';
     };
     
@@ -130,13 +148,36 @@ CounterApp.controller('CounterController', function($scope){
         sumAll();
     });
     
+    $scope.$watch('twoEuroRoll', function(newValue, oldValue){
+        if (newValue){
+            twoERollCentSum = parseInt(newValue) * 5000;
+        } else {
+           twoEcentSum = 0;
+        }
+        $scope.twoEuroRollSum = (twoERollCentSum / 100) + '€';
+        $scope.twoEuroSum = ((twoERollCentSum + twoEcentSum) / 100) + '€';
+        sumAll();
+    });
+    
     $scope.$watch('twoEuro', function(newValue, oldValue){
         if (newValue){
             twoEcentSum = parseInt(newValue) * 200;
         } else {
            twoEcentSum = 0;
         }
-        $scope.twoEuroSum = (twoEcentSum / 100) + '€';
+        $scope.twoEuroCoinSum = (twoEcentSum / 100) + '€';
+        $scope.twoEuroSum = ((twoERollCentSum + twoEcentSum) / 100) + '€';
+        sumAll();
+    });
+    
+    $scope.$watch('oneEuroRoll', function(newValue, oldValue){
+        if (newValue){
+            oneERollCentSum = parseInt(newValue) * 2500;
+        } else {
+           oneEcentSum = 0;
+        }
+        $scope.oneEuroRollSum = (oneERollCentSum / 100) + '€';
+        $scope.oneEuroSum = ((oneERollCentSum + oneEcentSum) / 100) + '€';
         sumAll();
     });
     
@@ -146,7 +187,19 @@ CounterApp.controller('CounterController', function($scope){
         } else {
            oneEcentSum = 0;
         }
-        $scope.oneEuroSum = (oneEcentSum / 100) + '€';
+        $scope.oneEuroCoinSum = (oneEcentSum / 100) + '€';
+        $scope.oneEuroSum = ((oneERollCentSum + oneEcentSum) / 100) + '€';
+        sumAll();
+    });
+    
+    $scope.$watch('fiftyCentRoll', function(newValue, oldValue){
+        if (newValue){
+            fiftyCRollCentSum = parseInt(newValue) * 2000;
+        } else {
+           fiftyCcentSum = 0;
+        }
+        $scope.fiftyCentRollSum = (fiftyCRollCentSum / 100) + '€';
+        $scope.fiftyCentSum = ((fiftyCRollCentSum + fiftyCcentSum) / 100) + '€';
         sumAll();
     });
     
@@ -156,7 +209,19 @@ CounterApp.controller('CounterController', function($scope){
         } else {
            fiftyCcentSum = 0;
         }
-        $scope.fiftyCentSum = (fiftyCcentSum / 100) + '€';
+        $scope.fiftyCentCoinSum = (fiftyCcentSum / 100) + '€';
+        $scope.fiftyCentSum = ((fiftyCRollCentSum + fiftyCcentSum) / 100) + '€';
+        sumAll();
+    });
+    
+    $scope.$watch('twentyCentRoll', function(newValue, oldValue){
+        if (newValue){
+            twentyCRollCentSum = parseInt(newValue) * 800;
+        } else {
+           twentyCcentSum = 0;
+        }
+        $scope.twentyCentRollSum = (twentyCRollCentSum / 100) + '€';
+        $scope.twentyCentSum = ((twentyCRollCentSum + twentyCcentSum) / 100) + '€';
         sumAll();
     });
     
@@ -166,7 +231,19 @@ CounterApp.controller('CounterController', function($scope){
         } else {
            twentyCcentSum = 0;
         }
-        $scope.twentyCentSum = (twentyCcentSum / 100) + '€';
+        $scope.twentyCentCoinSum = (twentyCcentSum / 100) + '€';
+        $scope.twentyCentSum = ((twentyCRollCentSum + twentyCcentSum) / 100) + '€';
+        sumAll();
+    });
+    
+    $scope.$watch('tenCentRoll', function(newValue, oldValue){
+        if (newValue){
+            tenCRollCentSum = parseInt(newValue) * 400;
+        } else {
+           tenCcentSum = 0;
+        }
+        $scope.tenCentRollSum = (tenCRollCentSum / 100) + '€';
+        $scope.tenCentSum = ((tenCRollCentSum + tenCcentSum) / 100) + '€';
         sumAll();
     });
     
@@ -176,7 +253,20 @@ CounterApp.controller('CounterController', function($scope){
         } else {
            tenCcentSum = 0;
         }
-        $scope.tenCentSum = (tenCcentSum / 100) + '€';
+        $scope.tenCentCoinSum = (tenCcentSum / 100) + '€';
+        $scope.tenCentSum = ((tenCRollCentSum + tenCcentSum) / 100) + '€';
+        sumAll();
+    });
+    
+    $scope.$watch('fiveCentRoll', function(newValue, oldValue){
+        //countSums(fiveCcentSum, $scope.fiveCentSum, newValue);
+        if (newValue){
+            fiveCRollCentSum = parseInt(newValue) * 250;
+        } else {
+           fiveCRollCentSum = 0;
+        }
+        $scope.fiveCentRollSum = (fiveCRollCentSum / 100) + '€';
+        $scope.fiveCentSum = ((fiveCcentSum + fiveCRollCentSum) / 100) + '€';
         sumAll();
     });
     
@@ -187,7 +277,8 @@ CounterApp.controller('CounterController', function($scope){
         } else {
            fiveCcentSum = 0;
         }
-        $scope.fiveCentSum = (fiveCcentSum / 100) + '€';
+        $scope.fiveCentCoinSum = (fiveCcentSum / 100) + '€';
+        $scope.fiveCentSum = ((fiveCcentSum + fiveCRollCentSum) / 100) + '€';
         sumAll();
     });
     
