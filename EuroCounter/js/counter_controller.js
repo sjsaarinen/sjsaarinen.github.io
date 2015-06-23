@@ -152,7 +152,7 @@ CounterApp.controller('CounterController', function($scope){
         if (newValue){
             twoERollCentSum = parseInt(newValue) * 5000;
         } else {
-           twoEcRollCentSum = 0;
+           twoERollCentSum = 0;
         }
         $scope.twoEuroRollSum = (twoERollCentSum / 100) + '€';
         $scope.twoEuroSum = ((twoERollCentSum + twoEcentSum) / 100) + '€';
